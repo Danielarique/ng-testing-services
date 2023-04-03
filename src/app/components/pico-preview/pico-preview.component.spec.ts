@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PicoPreviewComponent } from './pico-preview.component';
 
@@ -6,7 +6,7 @@ describe('PicoPreviewComponent', () => {
   let component: PicoPreviewComponent;
   let fixture: ComponentFixture<PicoPreviewComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PicoPreviewComponent ]
     })
