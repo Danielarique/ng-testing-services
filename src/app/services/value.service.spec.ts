@@ -3,7 +3,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 
 import { ValueService } from './value.service';
 
-fdescribe('ValueService', () => {
+describe('ValueService', () => {
   let service: ValueService;
 
    beforeEach(() => {
@@ -21,13 +21,13 @@ fdescribe('ValueService', () => {
     expect(service).toBeTruthy();
   });
 
-  fdescribe('test for getValue', ()=>{
+  describe('test for getValue', ()=>{
     it('should return "my value"', ()=>{
       expect(service.getValue()).toBe('my value');
     })
   })
 
-  fdescribe('test for setValue', ()=>{
+  describe('test for setValue', ()=>{
     it('should change the value', ()=>{
       expect(service.getValue()).toBe('my value');
       service.setValue('change');
@@ -35,7 +35,7 @@ fdescribe('ValueService', () => {
     })
   })
 
-  fdescribe('test for getPromiseValue', ()=>{
+  describe('test for getPromiseValue', ()=>{
     it('should return promise value', (doneFn)=>{
      service.getPromiseValue()
      .then((value)=>{
@@ -45,13 +45,13 @@ fdescribe('ValueService', () => {
     })
   })
 
-  fdescribe('test for getPromise value', ()=>{
+  describe('test for getPromise value', ()=>{
     it('should return promise value for promise', async()=>{
       const rta = await service.getPromiseValue();
       expect(rta).toBe('promise value')
     })
   })
-   fdescribe('test for getObservableValue', ()=>{
+   describe('test for getObservableValue', ()=>{
     it('should return observable value from observable', async()=>{
       const rta = await service.getObservableValue()
       .subscribe(value=>{
